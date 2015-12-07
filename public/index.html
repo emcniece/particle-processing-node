@@ -1,0 +1,41 @@
+<html>
+<head>
+	<title>Aurora ProcessingJS/NodeJS Demo</title>
+
+	<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/bower_components/pick-a-color/build/1.2.3/css/pick-a-color-1.2.3.min.css">
+
+	<style>
+		.pjsconsole{ height:350px !important;}
+		.pjsconsole .console{ height:330px !important;}
+	</style>
+
+	<script src="/bower_components/socket.io-client/dist/socket.io.min.js"></script>
+	<script src="/bower_components/Processing.js/processing.min.js"></script>
+
+	<script>
+		var socket = io.connect('http://localhost');
+		var angle = 0;
+		var fillColor = '#0079B8';
+		var fillR = 0;
+		var fillG = 121;
+		var fillB = 184;
+		var nearest = 0;  // Nearest pont index
+	</script>
+</head>
+<body>
+	<h1 id="dialogue"></h1>
+
+	<div class="picker" style="margin-bottom:20px;max-width:400px;">
+		<input type="text" value="#0079B8" name="fillColor" class="pick-a-color form-control">
+	</div>
+
+	<canvas id="tree" data-processing-sources="circle.pde"></canvas>
+
+	<script src="/bower_components/jquery/jquery.min.js"></script>
+	<script src="/bower_components/tinycolor/dist/tinycolor-min.js"></script>
+	<script src="/bower_components/pick-a-color/build/1.2.3/js/pick-a-color-1.2.3.min.js"></script>
+
+	<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
